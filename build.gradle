@@ -4,3 +4,27 @@ allprojects {
         maven { url 'https://jitpack.io' }
     }
 }
+
+val settings = UltimateRingtonePicker.Settings(
+    preSelectUris = emptyList(),
+    enableMultiSelect = false,
+    streamType = AudioManager.STREAM_MUSIC,
+    systemRingtonePicker = UltimateRingtonePicker.SystemRingtonePicker(
+        customSection = UltimateRingtonePicker.SystemRingtonePicker.CustomSection(
+            useSafSelect = false,
+            launchSafOnPermissionDenied = true,
+            launchSafOnPermissionPermanentlyDenied = true
+        ),
+        defaultSection = UltimateRingtonePicker.SystemRingtonePicker.DefaultSection(
+            showSilent = true,
+            defaultUri = null,
+            defaultTitle = null,
+            additionalRingtones = emptyList()
+        ),
+        ringtoneTypes = emptyList()
+    ),
+    deviceRingtonePicker = UltimateRingtonePicker.DeviceRingtonePicker(
+        deviceRingtoneTypes = emptyList(),
+        alwaysUseSaf = false
+    )
+)
